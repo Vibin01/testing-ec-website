@@ -7,7 +7,7 @@ export default function BiWeeklyTextChange() {
   const INTERVAL = 5 * 60 * 1000;
 
   // SET YOUR ORIGINAL UPLOAD DATE HERE
-  const startDate = new Date("2026-03-18T08:04:77");
+  const startDate = new Date("2026-03-18T10:18:77");
 
   const now = new Date();
 
