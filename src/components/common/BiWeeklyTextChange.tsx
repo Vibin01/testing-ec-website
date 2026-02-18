@@ -1,4 +1,3 @@
-export const revalidate = 300; // 5 minutes (300 seconds)
 
 export default function BiWeeklyTextChange() {
   const INTERVAL = 5 * 60 * 1000; // 5 minutes
@@ -30,3 +29,6 @@ export default function BiWeeklyTextChange() {
     </>
   );
 }
+
+export const revalidate = 0;
+
