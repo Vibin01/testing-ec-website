@@ -1,15 +1,22 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import data from "@/data/data.json";
 
-export const dynamic = "force-dynamic";
-export const fetchCache = "force-no-store";
-
 export default function BiWeeklyTextChange() {
-  const INTERVAL = 1 * 60 * 1000;
+  const INTERVAL = 1 * 60 * 1000; // 1 minute
 
-  // SET YOUR ORIGINAL UPLOAD DATE HERE
   const startDate = new Date("2026-03-18T10:42:40");
 
-  const now = new Date();
+  const [now, setNow] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setNow(new Date());
+    }, INTERVAL);
+
+    return () => clearInterval(timer);
+  }, []);
 
   const diff = now.getTime() - startDate.getTime();
 
@@ -31,7 +38,8 @@ export default function BiWeeklyTextChange() {
 
   return (
     <>
-     Last Updated Time :{" "}
+      {data.texts[index]} <br />
+      Last Updated Timesss:{" "}
       <time dateTime={now.toISOString()}>
         {formattedDate} {formattedTime}
       </time>
