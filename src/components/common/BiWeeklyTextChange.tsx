@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 export default function BiWeeklyTextChange() {
-  const INTERVAL = 5 * 60 * 1000; // 5 minutes
+  const INTERVAL = 5 * 50 * 1000; // 5 minutes
 
   const [now, setNow] = useState(() => {
     const current = Date.now();
