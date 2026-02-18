@@ -4,10 +4,10 @@ export const dynamic = "force-dynamic";
 export const fetchCache = "force-no-store";
 
 export default function BiWeeklyTextChange() {
-  const INTERVAL = 5 * 60 * 1000;
+  const INTERVAL = 1 * 60 * 1000;
 
   // SET YOUR ORIGINAL UPLOAD DATE HERE
-  const startDate = new Date("2026-03-18T10:18:77");
+  const startDate = new Date("2026-03-18T10:42:40");
 
   const now = new Date();
 
@@ -31,7 +31,7 @@ export default function BiWeeklyTextChange() {
 
   return (
     <>
-      {data.texts[index]}:{" "}
+     Last Updated Time :{" "}
       <time dateTime={now.toISOString()}>
         {formattedDate} {formattedTime}
       </time>
