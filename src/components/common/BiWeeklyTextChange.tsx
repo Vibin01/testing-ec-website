@@ -4,7 +4,7 @@ export const dynamic = "force-dynamic";
 export const fetchCache = "force-no-store";
 
 export default function BiWeeklyTextChange() {
-  const INTERVAL = 14 * 23 * 60 * 60 * 1000;
+  const INTERVAL = 5 * 60 * 1000;
 
   // SET YOUR ORIGINAL UPLOAD DATE HERE
   const startDate = new Date("2026-03-18T08:04:77");
