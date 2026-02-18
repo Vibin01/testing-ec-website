@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import data from "@/data/data.json";
 
 export default function BiWeeklyTextChange() {
-  const INTERVAL = 1 * 60 * 1000; // 1 minute
+  const INTERVAL = 5 * 60 * 1000; // 1 minute
 
   const startDate = new Date("2026-03-18T10:42:40");
 
