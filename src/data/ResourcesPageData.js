@@ -4177,31 +4177,23 @@ const solutionTabs = [
                     <li>
                       <span className="font-bold">
                         {" "}
-                        Effortless Communication
+                        Engagement
                       </span>
-                      : Intuitive tools empower candidates to ask questions or
-                      provide updates seamlessly, fostering open and stress-free
-                      dialogue.
+                      – Participation is natural. Focus is sustained.
                     </li>
                     <li>
-                      <span className="font-bold"> Accessible Information</span>
-                      : Clear, upfront details regarding roles, timelines, and
-                      expectations cultivate trust and eliminate unnecessary
-                      guesswork.
+                      <span className="font-bold"> Accountability </span>
+                      – Ownership is visible. Responsibilities are clear.
                     </li>
                     <li>
-                      <span className="font-bold">Streamlined Processes</span>:
-                      A swift and transparent journey minimizes frustrating
-                      delays that often push candidates toward hedging or
-                      ghosting.
+                      <span className="font-bold">Signal </span>– Expectations are defined. Feedback is timely.
                     </li>
                     <li>
                       <span className="font-bold">
                         {" "}
-                        Yielding Ethical Incentives
+                       Yield 
                       </span>
-                      : A respectful, human-centered culture naturally rewards
-                      integrity, establishing it as the accepted norm.
+                    – Impact is measurable. Progress is visible.
                     </li>
                   </ul>
                   <p>
@@ -4279,60 +4271,31 @@ const solutionTabs = [
                     Connect EC: Building the "Easy Street" to Honest Hires
                   </h2>{" "}
                   <p>
-                    Connect EC is more than a tool; it's a fundamental redesign
-                    of the hiring experience, mirroring the trust and clarity of
-                    positive real-world interactions. This is achieved through:
+                    Connect EC is more than a tool; it is a behavioral architecture built on four structural pillars — activated through intelligent default design.
                   </p>
                   <ul className="pl-2 lg:pl-10 py-3 space-y-6 list-disc ml-5  lg:text-[16px] xl:text-[20px] 2xl:text-[24px]">
                     <li>
                       <span className="font-bold">
-                        Effortless Communication
+                        Engagement 
                       </span>
-                      : Communication channels are designed to make updates and
-                      inquiries as comfortable as messaging a friend.
+                     – Participation is natural when meaningful interaction is the default.
                     </li>
                     <li>
-                      <span className="font-bold">Accessible Information</span>:
-                      Transparent role details eliminate the uncertainty that
-                      drives hedging.
+                      <span className="font-bold">Accountability </span> – Ownership is visible when commitments are built into the process.
                     </li>
                     <li>
-                      <span className="font-bold">Streamlined Processes</span>:
-                      A seamless journey reduces delays and the anxiety they
-                      create.
+                      <span className="font-bold">Signal </span>– Expectations are defined and feedback is timely when transparency is embedded in the workflow.
                     </li>
                     <li>
-                      <span className="font-bold"> Ethical Incentives</span>: A
-                      culture where honesty is actively celebrated and
-                      reinforced by established social norms, not merely
-                      expected.
-                    </li>
-                    <li>
-                      <span className="font-bold">
-                        {" "}
-                        Frictionless Experiences
-                      </span>
-                      : Removing unnecessary steps that can inadvertently
-                      discourage honest action.
-                    </li>
-                    <li>
-                      <span className="font-bold"> Default Options</span>:
-                      Positioning integrity as the pre-selected choice,
-                      encouraging ethical engagement from the outset.
+                      <span className="font-bold"> Yield </span>– Impact is measurable and progress is visible when honest action is reinforced by design.
                     </li>
                   </ul>
                   <p>
-                    By providing timely nudges and clear guidance, Connect EC
-                    fosters an environment where honesty isn't just a desired
-                    outcome—it's the logical and rewarding path for candidates,
-                    employers, and recruiters.
+                    Default design is not an add-on.<br />It is the backbone.
+
                   </p>
                   <p>
-                    Yet, the true power of this "easy street" to honest hires
-                    extends far beyond mere convenience. This meticulously
-                    designed system, making integrity the path of least
-                    resistance, taps into a profound, even ancient, truth about
-                    human and societal existence—what we term...
+                 When integrity is structured as the easiest option, it becomes the natural one.
                   </p>
                 </div>
                 <div className="space-y-5 pt-3 pb-2">
@@ -4415,7 +4378,7 @@ const solutionTabs = [
                     To function, society depends on honesty being the default
                     baseline, not the exception. To flourish, humanity must
                     remember that Integrity is not an effort. It's our original
-                    state.
+                    state. And when systems are designed to support that default, engagement strengthens, accountability becomes visible, signals become clearer, and honest effort yields measurable trust.
                   </p>
                   <p>
                     When we design systems—like hiring platforms, communities,
@@ -4449,9 +4412,7 @@ const solutionTabs = [
                     demonstrates greater loyalty and commitment.
                   </p>
                   <p>
-                    Within the EASY framework, every transparent step multiplies
-                    trust, transforming single interactions into enduring
-                    partnerships.
+                   Within the EASY framework, every transparent step multiplies trust — engagement deepens, accountability strengthens, signals sharpen, and honest effort yields measurable progress.
                   </p>
                   <p>
                     To further amplify this Truth as a Multiplier and truly
@@ -4582,30 +4543,13 @@ const solutionTabs = [
                     the Honest.
                   </h3>
                   <p>
-                    The EASY Path and the HonesTalent badge are more than just
-                    mechanisms—they signify a profound commitment to
-                    definitively ending the Honesty Heist. By making honesty the
-                    clear and easy choice, and by rewarding it with visible and
-                    meaningful recognition, we redefine hiring as a
-                    collaboration built on trust from the very first
-                    interaction.
+                   The EASY Path and the HonesTalent badge are more than mechanisms—they represent a deliberate commitment to ending the Honesty Heist at its root. By making honesty the clear and easy choice, and by rewarding it with visible and meaningful recognition, we redefine hiring as a collaboration built on trust from the very first interaction.
                   </p>
                   <p>
-                    That trust isn't just theoretical—it becomes tangible
-                    through action. Through the EASY Path, we dismantle barriers
-                    to honesty, while the HonesTalent badge illuminates those
-                    who embody it. Picture a candidate, once wary of empty
-                    promises, now standing tall with a badge that radiates their
-                    integrity. Imagine an employer, free from the burden of
-                    broken commitments, building teams rooted in authenticity.
+                   That trust isn’t theoretical—it becomes tangible. Through the EASY Path, we remove barriers to integrity. Through the HonesTalent badge, we illuminate those who embody it. Picture a candidate, once wary of empty promises, now standing tall with a badge that reflects their reliability. Imagine an employer building teams rooted in authenticity instead of uncertainty.
                   </p>
                   <p>
-                    This vision of trust in action comes to life through Connect
-                    EC. More than a hiring platform, it's the catalyst for a
-                    profound shift in how we build careers and companies.
-                    Envision a world where ghosting is a relic of the past,
-                    where commitments are unbreakable, and trust is the
-                    cornerstone of every hire.
+                    This vision of trust in action comes to life through Connect EC. More than a hiring platform, it is a catalyst for how careers and companies are built. Envision a world where ghosting is a relic of the past, where commitments are honored, and where trust anchors every hire.
                   </p>
                   <p>
                     That world isn't a distant dream—it starts here, with
@@ -4617,14 +4561,15 @@ const solutionTabs = [
                     strength, illuminated by undeniable clarity, and destined to
                     endure, grounded in ethics.
                   </p>
+                  <p>That world isn’t distant. It begins with design.</p>
+                  <p>Because when the path to honesty becomes effortless, the future isn’t just built—it’s forged with clarity, strength, and endurance.</p>
+                      <p>And when engagement is natural, accountability is visible, signals are clear, and integrity yields measurable trust—honesty stops being an aspiration.</p>
+<p>It becomes the default.</p>
                   <h3 className="mt-5 mb-3 my-2 md:text-[16px] lg:text-[18px] xl:text-[22px] 2xl:text-[26px] font-bold">
                     Join the Revolution
                   </h3>
                   <p>
-                    The future is honest, and with Connect EC, it's within our
-                    grasp. Together, let's forge a legacy where truth is the
-                    foundation, and the Mirror of Motives reflects a world where
-                    everyone thrives.
+                    The future is honest. And with Connect EC, it is within reach. Together, let’s build a legacy where truth is foundational and the Mirror of Motives reflects a world where everyone thrives.
                   </p>
                 </div>
               </div>

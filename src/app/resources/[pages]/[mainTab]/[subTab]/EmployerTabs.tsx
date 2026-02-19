@@ -37,19 +37,19 @@ export default function EmployerTabs({
   const [activeIndex, setActiveIndex] = useState(1);
 
   const [mainTab, setMainTab] = useState<string>(
-    typeof params.mainTab === "string" ? params.mainTab : employerTabs[0].path
+    typeof params.mainTab === "string" ? params.mainTab : employerTabs[0].path,
   );
   const [subTab, setSubTab] = useState<string>(
     typeof params.subTab === "string"
       ? params.subTab
-      : employerTabs[0]?.subTabs[0]?.path || ""
+      : employerTabs[0]?.subTabs[0]?.path || "",
   );
 
   const rightContainerRef = useRef<HTMLDivElement>(null);
 
-   const [isFixed, setIsFixed] = useState(true);
+  const [isFixed, setIsFixed] = useState(true);
 
-   useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       const footer = document.querySelector("footer");
       const box = document.getElementById("sticky-box");
@@ -72,33 +72,32 @@ export default function EmployerTabs({
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-      const [show, setShow] = useState(true);
+  const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-//  useEffect(() => {
-//     const controlNavbar = () => {
-//       const currentScroll = window.scrollY;
-//       const maxScroll = document.body.scrollHeight - window.innerHeight;
-//       const remainingScroll = maxScroll - currentScroll;
+  //  useEffect(() => {
+  //     const controlNavbar = () => {
+  //       const currentScroll = window.scrollY;
+  //       const maxScroll = document.body.scrollHeight - window.innerHeight;
+  //       const remainingScroll = maxScroll - currentScroll;
 
-//       // 🧠 Always hide if in the last 800px zone
-//       if (remainingScroll < 800) {
-//         setShow(false);
-//       } else if (currentScroll > lastScrollY && currentScroll > 750) {
-//         // 👇 Scrolling down past 750px
-//         setShow(false);
-//       } else {
-//         // 👆 Scrolling up and NOT near bottom
-//         setShow(true);
-//       }
+  //       // 🧠 Always hide if in the last 800px zone
+  //       if (remainingScroll < 800) {
+  //         setShow(false);
+  //       } else if (currentScroll > lastScrollY && currentScroll > 750) {
+  //         // 👇 Scrolling down past 750px
+  //         setShow(false);
+  //       } else {
+  //         // 👆 Scrolling up and NOT near bottom
+  //         setShow(true);
+  //       }
 
-//       setLastScrollY(currentScroll);
-//     };
+  //       setLastScrollY(currentScroll);
+  //     };
 
-//     window.addEventListener("scroll", controlNavbar);
-//     return () => window.removeEventListener("scroll", controlNavbar);
-//   }, [lastScrollY]);
-
+  //     window.addEventListener("scroll", controlNavbar);
+  //     return () => window.removeEventListener("scroll", controlNavbar);
+  //   }, [lastScrollY]);
 
   useEffect(() => {
     if (typeof params.mainTab === "string") setMainTab(params.mainTab);
@@ -107,12 +106,12 @@ export default function EmployerTabs({
 
   const currentMain = useMemo(
     () => employerTabs.find((tab) => tab.path === mainTab),
-    [mainTab, employerTabs]
+    [mainTab, employerTabs],
   );
 
   const currentSub = useMemo(
     () => currentMain?.subTabs.find((tab) => tab.path === subTab),
-    [currentMain, subTab]
+    [currentMain, subTab],
   );
 
   useEffect(() => {
@@ -124,7 +123,7 @@ export default function EmployerTabs({
     if (typeof params.mainTab === "string") {
       setMainTab(params.mainTab);
       const index = employerTabs.findIndex(
-        (tab) => tab.path === params.mainTab
+        (tab) => tab.path === params.mainTab,
       );
       if (index !== -1) setActiveIndex(index + 1);
     }
@@ -154,7 +153,7 @@ export default function EmployerTabs({
     <>
       {/* Desktop */}
       <div className="hidden  lg:flex md:gap-[2%] lg:gap-[2%] px-[4%] md:px-[5%] py-[2%] overflow-y-scroll scrollbar-hidden">
-     <div className="flex lg:flex-col lg:w-[75%]">
+        <div className="flex lg:flex-col lg:w-[75%]">
           {employerTabs
             .filter((m) => m.path === mainTab)
             .map((m) => (
@@ -165,10 +164,7 @@ export default function EmployerTabs({
                 {m.heading}
               </h2>
             ))}
-          <div
-            ref={rightContainerRef}
-            className="  "
-          >
+          <div ref={rightContainerRef} className="  ">
             {currentSub && (
               <div className="space-y-6">
                 {currentSub?.image && (
@@ -191,103 +187,107 @@ export default function EmployerTabs({
           </div>
         </div>
         <div className=" relative flex lg:flex-col lg:w-[25%] ">
-           
-        <div id="sticky-box" className={`${
-        isFixed
-          ? "fixed top-[130px]"
-          : "relative flex flex-col justify-end items-end top-auto right-auto"
-      } pr-[5%] h-full overflow-y-scroll scrollbar-hidden`}>
-          {employerTabs
-            .filter((m) => m.path === mainTab)
-            .map((m) => (
-              <h2
-                key={m.path}
-                className="mb-6 text-[20px] md:text-[20px] lg:text-[24px] xl:text-[30px] 2xl:text-[40px] font-bold"
-              >
-                {m.title} Solution
-              </h2>
-            ))}
-        
-<div className="flex flex-col">
-            <Tabs
-              value={mainTab}
-              onValueChange={handleMainTabChange}
-              orientation="vertical"
-            >
-              <TabsList className="flex flex-col w-full space-y-6">
-                {employerTabs.map((tab) => (
-                  <div
-                    key={tab.path}
-                    className={`w-full md:p-2 lg:p-4 xl:p-6 backdrop-blur-[6px] bg-white rounded-[12px] border-l-[10px]  ${
-                      mainTab === tab.path ? "border-[#0668E1]" : "border-white"
-                    }`}
-                  >
-                    <TabsTrigger
-                      value={tab.path}
-                      className="flex flex-col  gap-2 w-full"
-                    >
-                      <div className="flex flex-row">
-                      <div className=" lg:w-1/4">
-                        <Image
-                          src={tab.icon}
-                          alt={tab.heading}
-                          width={60}
-                          height={60}
-                          className="object-contain w-auto h-[60px]"
-                        />{" "}
-                      </div>
-                      <div className="lg:w-3/4 flex flex-col space-y-4 text-left">
-                        <span className="md:text-[12px] lg:text-[15px] xl:text-[18px] 2xl:text-[20px] font-bold">
-                          {tab.heading}
-                        </span>
-                       
-                      </div>
-                      </div>
-                      <div className=" flex mb-4">
- <span className="md:text-[11px] lg:text-[14px] xl:text-[16px] 2xl:text-[18px] text-left">
-<span className="font-semibold">{tab.highlight_description}</span>
-                          {tab.description}
-                        </span>
-                      </div>
-                    </TabsTrigger>
+          <div
+            id="sticky-box"
+            className={`${
+              isFixed
+                ? "fixed top-[130px]"
+                : "relative flex flex-col justify-end items-end top-auto right-auto"
+            } pr-[5%] h-[82vh] overflow-y-scroll scrollbar-hidden`}
+          >
+            {employerTabs
+              .filter((m) => m.path === mainTab)
+              .map((m) => (
+                <h2
+                  key={m.path}
+                  className="mb-6 text-[20px] md:text-[20px] lg:text-[24px] xl:text-[30px] 2xl:text-[40px] font-bold"
+                >
+                  {m.title} Solution
+                </h2>
+              ))}
 
-                    <AnimatePresence initial={false}>
-                      {mainTab === tab.path && (
-                        <motion.div
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: "auto" }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="overflow-hidden mt-5 "
-                        >
-                          <Tabs
-                            value={subTab}
-                            onValueChange={handleSubTabChange}
-                            orientation="vertical"
+            <div className="flex flex-col">
+              <Tabs
+                value={mainTab}
+                onValueChange={handleMainTabChange}
+                orientation="vertical"
+              >
+                <TabsList className="flex flex-col w-full space-y-6">
+                  {employerTabs.map((tab) => (
+                    <div
+                      key={tab.path}
+                      className={`w-full md:p-2 lg:p-4 xl:p-6 backdrop-blur-[6px] bg-white rounded-[12px] border-l-[10px]  ${
+                        mainTab === tab.path
+                          ? "border-[#0668E1]"
+                          : "border-white"
+                      }`}
+                    >
+                      <TabsTrigger
+                        value={tab.path}
+                        className="flex flex-col  gap-2 w-full"
+                      >
+                        <div className="flex flex-row">
+                          <div className=" lg:w-1/4">
+                            <Image
+                              src={tab.icon}
+                              alt={tab.heading}
+                              width={60}
+                              height={60}
+                              className="object-contain w-auto h-[60px]"
+                            />{" "}
+                          </div>
+                          <div className="lg:w-3/4 flex flex-col space-y-4 text-left">
+                            <span className="md:text-[12px] lg:text-[15px] xl:text-[18px] 2xl:text-[20px] font-bold">
+                              {tab.heading}
+                            </span>
+                          </div>
+                        </div>
+                        <div className=" flex mb-4">
+                          <span className="md:text-[11px] lg:text-[14px] xl:text-[16px] 2xl:text-[18px] text-left">
+                            <span className="font-semibold">
+                              {tab.highlight_description}
+                            </span>
+                            {tab.description}
+                          </span>
+                        </div>
+                      </TabsTrigger>
+
+                      <AnimatePresence initial={false}>
+                        {mainTab === tab.path && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="overflow-hidden mt-5 "
                           >
-                            <TabsList className="grid md:grid-cols-2   gap-4">
-                              {tab.subTabs.map((sub) => (
-                                <TabsTrigger
-                                  key={sub.path}
-                                  value={sub.path}
-                                 data-title={sub.title}
-                                  className="solution-sub-title justify-start w-full md:text-[13px] lg:text-[15px] xl:text-[17px] 2xl:text-[20px] font-semibold md:min-h-[30px] lg:min-h-[48px] xl:min-h-[54px] rounded-[12px] border border-[#0668E11A] data-[state=active]:bg-[#0668E1] data-[state=active]:text-white hover:bg-gray-100"
-                                >
-                                  {sub.title}
-                                </TabsTrigger>
-                              ))}
-                            </TabsList>
-                          </Tabs>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                ))}
-              </TabsList>
-            </Tabs>
+                            <Tabs
+                              value={subTab}
+                              onValueChange={handleSubTabChange}
+                              orientation="vertical"
+                            >
+                              <TabsList className="grid md:grid-cols-2   gap-4">
+                                {tab.subTabs.map((sub) => (
+                                  <TabsTrigger
+                                    key={sub.path}
+                                    value={sub.path}
+                                    data-title={sub.title}
+                                    className="solution-sub-title justify-start w-full md:text-[13px] lg:text-[15px] xl:text-[17px] 2xl:text-[20px] font-semibold md:min-h-[30px] lg:min-h-[48px] xl:min-h-[54px] rounded-[12px] border border-[#0668E11A] data-[state=active]:bg-[#0668E1] data-[state=active]:text-white hover:bg-gray-100"
+                                  >
+                                    {sub.title}
+                                  </TabsTrigger>
+                                ))}
+                              </TabsList>
+                            </Tabs>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ))}
+                </TabsList>
+              </Tabs>
             </div>
           </div>
-        
         </div>
       </div>
 
@@ -360,7 +360,7 @@ export default function EmployerTabs({
                         key={sub.path}
                         value={sub.path}
                         data-title={sub.title}
-                                  className="solution-sub-title justify-center items-center flex text-nowrap w-[100px] px-3 text-[13px]  font-semibold  min-h-[38px]  rounded-[12px]  border border-[#0668E11A]  data-[state=active]:bg-[#0668E1] data-[state=active]:text-white hover:bg-gray-100"
+                        className="solution-sub-title justify-center items-center flex text-nowrap w-[100px] px-3 text-[13px]  font-semibold  min-h-[38px]  rounded-[12px]  border border-[#0668E11A]  data-[state=active]:bg-[#0668E1] data-[state=active]:text-white hover:bg-gray-100"
                       >
                         {sub.title}
                       </TabsTrigger>
