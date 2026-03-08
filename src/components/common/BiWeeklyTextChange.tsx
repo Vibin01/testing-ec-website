@@ -1,23 +1,7 @@
-"use client";
-
-import { useEffect, useState } from "react";
+export const revalidate = 60; // page regenerates every 60 seconds
 
 export default function BiWeeklyTextChange() {
-  const INTERVAL =  15 * 23 * 43 * 56 * 1000;
-
-  const [now, setNow] = useState(() => {
-    const current = Date.now();
-    return new Date(Math.floor(current / INTERVAL) * INTERVAL);
-  });
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      const current = Date.now();
-      setNow(new Date(Math.floor(current / INTERVAL) * INTERVAL));
-    }, 1000); 
-
-    return () => clearInterval(timer);
-  }, []);
+  const now = new Date();
 
   const formattedDate = now.toLocaleDateString("en-IN", {
     day: "2-digit",
@@ -34,7 +18,7 @@ export default function BiWeeklyTextChange() {
 
   return (
     <>
-      Last Updated Time:{" "}
+      Last Updated Time{" "}
       <time dateTime={now.toISOString()}>
         {formattedDate} {formattedTime}
       </time>

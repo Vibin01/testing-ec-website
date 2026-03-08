@@ -7,6 +7,8 @@ import { MetadataRoute } from "next";
 
 const blogs = await getAllBlogs();
 
+export const revalidate = 86400;
+
 function getBiWeeklyDate(): Date {
   const now = new Date();
   const twoWeeksInMs = 14 * 24 * 60 * 60 * 1000;
