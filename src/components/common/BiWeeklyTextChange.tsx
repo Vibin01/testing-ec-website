@@ -1,7 +1,19 @@
-export const revalidate = 60; // page regenerates every 60 seconds
+"use client";
+
+import { useEffect, useState } from "react";
 
 export default function BiWeeklyTextChange() {
-  const now = new Date();
+  const INTERVAL = 2 * 60 * 1000; // 2 minutes
+
+  const [now, setNow] = useState(() => new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setNow(new Date());
+    }, INTERVAL);
+
+    return () => clearInterval(timer);
+  }, []);
 
   const formattedDate = now.toLocaleDateString("en-IN", {
     day: "2-digit",
