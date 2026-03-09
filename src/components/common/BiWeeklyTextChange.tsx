@@ -2,15 +2,29 @@
 
 import { useEffect, useState } from "react";
 
-export default function BiWeeklyTextChange() {
-  const INTERVAL = 2 * 60 * 1000; // 2 minutes
+const INTERVAL = 2 * 60 * 1000; // 2 minutes
+const DEPLOY_TIME = new Date("2026-03-09T10:00:00"); // deployment time
 
-  const [now, setNow] = useState(() => new Date());
+export default function BiWeeklyTextChange() {
+  const [now, setNow] = useState(() => {
+    const current = Date.now();
+    return new Date(
+      Math.floor((current - DEPLOY_TIME.getTime()) / INTERVAL) * INTERVAL +
+        DEPLOY_TIME.getTime()
+    );
+  });
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setNow(new Date());
-    }, INTERVAL);
+      const current = Date.now();
+
+      setNow(
+        new Date(
+          Math.floor((current - DEPLOY_TIME.getTime()) / INTERVAL) * INTERVAL +
+            DEPLOY_TIME.getTime()
+        )
+      );
+    }, 1000);
 
     return () => clearInterval(timer);
   }, []);
