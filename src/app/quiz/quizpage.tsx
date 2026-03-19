@@ -40,17 +40,15 @@ export default function QuizPage() {
 
   const [showResult, setShowResult] = useState(false);
 
-  // ✅ Fetch all sections once
-  useEffect(() => {
+    useEffect(() => {
     const fetchAllSections = async () => {
       try {
         setIsLoading(true);
 
         const results = await Promise.all(
           SECTIONS.map(async (section) => {
-            const res = await fetch(
-              `https://uat.api.connectec.app/api/temp/feedback/questions?code=${section.code}`
-            );
+            const res = await fetch(`/api/question?code=${section.code}`);
+
             const data = await res.json();
 
             return {
@@ -76,6 +74,7 @@ export default function QuizPage() {
 
     fetchAllSections();
   }, []);
+
 
   // ✅ Handle Answer
   const handleAnswerChange = (value: number) => {
